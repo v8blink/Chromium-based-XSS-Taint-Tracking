@@ -22,8 +22,7 @@
 10.location.hostname    
 11.location.href   
 12.location.pathname  
-13.location.search   
-14.element.innerHTML    
+13.location.search    
 
 **（2）** 可检测的威胁发生点（sink）如下：  
 1.document.write()  
@@ -32,7 +31,9 @@
 4.setInterval()  
 5.Function()  
 6.alert()  
-7.eval()    
+7.eval()   
+8.element.innerHTML   
+9.element.XXX等一系列操作   
 # 4.软件检测演示图   
 ![avatar](f1.png)
 图中标记1 是具有 Taint Tracking 技术的 chromium 浏览器；标记2 是测试用例（index-1.htm）源码; 标记 3 是检测结果，下面详细说明检测结果：  
