@@ -11,30 +11,43 @@
 **1** 保密，不把域名分享给其他人，不自私占有检测成果，检测成果归域名提供者所有。  
 # 3.软件检测范围  
 **（1）** 软件可以检测的输入源（source）如下：  
-1.document.baseURI  
-2.document.cookie  
-3.document.documentURI 
-4.document.domain  
-5.document.URL  
-6.document.referrer  
-7.document.textContent  
-8.document.title  
-9.location.hash   
-10.location.hostname    
-11.location.href   
-12.location.pathname  
-13.location.search    
+//Source 代表 document、location、element  
+Source.baseURI  
+Source.cookie  
+Source.documentURI  
+Source.domain  
+Source.URL  
+Source.referrer  
+Source.textContent  
+Source.title  
+Source.hash   
+Source.hostname    
+Source.href   
+Source.pathname  
+Source.search  
+Source.className  
+Source.innerHTML  
+Source.namespaceURI    
 
 **（2）** 可检测的威胁发生点（sink）如下：  
-1.document.write()  
-2.document.writeln()  
-3.setTimeout()  
-4.setInterval()  
-5.Function()  
-6.alert()  
-7.eval()   
-8.element.innerHTML   
-9.element.XXX等一系列操作   
+//以下是全局方法  
+setTimeout()  
+setInterval()  
+Function()  
+alert()  
+eval()   
+//Sink 代表 document、location、element    
+Sink.write()  
+Sink.writeln()   
+Sink.createComment()  
+Sink.createTextNode()  
+Sink.createElement()  
+Sink.innerHTML  
+Sink.className  
+Sink.innerText  
+Sink.textContent   
+Sink.title   
+Sink.href
 # 4.软件检测演示图   
 ![avatar](f1.png)
 图中标记1 是具有 Taint Tracking 技术的 chromium 浏览器；标记2 是测试用例（index-1.htm）源码; 标记 3 是检测结果，下面详细说明检测结果：  
