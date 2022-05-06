@@ -4,7 +4,7 @@
 XSS 是网络中最常见的漏洞，再配合其它的攻击手段往往能轻易敲开服务器的大门。在各大漏洞平台中，XSS 漏洞也是数量最多的。本文介绍基于 Chromium 源码实现的 XSS 检测工具，该工具采用动态污染追踪（Taint Tracking）技术，可以监测 source 与 sink 之间的数据流动过程，为人工验证提供详实可靠的依据。  
 # 2 工具演示视频   
 **（1）** 我的工具如何检测 XSS？Burp Suite 靶场实践 (1) https://www.zhihu.com/zvideo/1505471657166282752   
-**（2）** 我的工具如何检测 XSS？Burp Suite 靶场实践 (2) https://www.zhihu.com/zvideo/1505847898797969409    
+**（2）** 我的工具如何检测 XSS？Burp Suite 靶场实践 (2) https://www.zhihu.com/zvideo/1505847898797969409      
 视频还在持续更新中...    
 
 # 3 原理介绍  
