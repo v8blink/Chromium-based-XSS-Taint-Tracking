@@ -1,3 +1,4 @@
+# 原定于 5.20 发布的 XSS 检测工具，要延迟两天，在修复关键的 bug。   
 # 基于 Chromium 的 XSS 检测工具   
 ![avatar](cover.jpg)     
 # 1 介绍  
