@@ -101,7 +101,11 @@ Sink:HTMLLIElement.className  冒号分隔，数据的终点是某个 Element �
 **3.优化 SourceSink.txt 格式**    
 目前这样的 SourceSink.txt 实属无奈，我本想采用 JSON 格式输出，但 Chromium 源码耦合度很高，源码又十分复杂，我的改动稍有差池，crash满天飞。  
 我更想把 SourceSink 结果转发到指定端口，这样更方便自动化。  
-但上述想法我暂时无能为力，我会尽快更新。
+但上述想法我暂时无能为力，我会尽快更新。  
+
+# 🍺赞赏    
+如果对你有帮助，请打赏豆豆以资鼓励🥂   
+![avatar](Donate.jpg)   
 
 # 免责声明
 
