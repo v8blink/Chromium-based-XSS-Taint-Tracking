@@ -1,11 +1,13 @@
 ![avatar](cyclops.ico)**Cyclops 是一款 XSS 检测工具**    
- Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地址](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases)   
+
+Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地址](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases)  
+
+现有仅有 Win 10版，Linux 和 Mac 版马上更新。   
 
 
 # 使用说明
 Cyclops 是一款基于 Chromium 源码实现的 XSS 检测工具。该软件仍处于开发阶段，有问题及时沟通。  
-使用 Cyclops 访问目标网站时一定要添加 "--no-sandbox" 参数，发现可疑 XSS 时，会生成 SourceSink.txt。  
-现有仅有 Win 10版，Linux 和 Mac 版稍后更新出。  
+使用 Cyclops 访问目标网站时一定要添加 "--no-sandbox" 参数，发现可疑 XSS 时，会生成 SourceSink.txt。     
 ### 1.SourceSink 文件格式说明  
 文件中每行是一条 sink 记录，由逗号分为三部分。第一部分是 sink 信息；第二部分 910226 是测试标记；第三部分是数据来源，其中 每对 [] 是一个单元，单元可以嵌套，从里向外看。举例如下：  
 >[Sink:alert:qerwr , 910226, [ENURI:[Substring:[Location.search]]]]
