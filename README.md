@@ -105,7 +105,7 @@ Sink:HTMLLIElement.className  冒号分隔，数据的终点是某个 Element �
 
 # 🍺赞赏    
 如果对你有帮助，请打赏豆豆以资鼓励🥂   
-![avatar](Donate.jpg)   
+![](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/blob/main/Donate.jpg)       
 
 # 免责声明
 
