@@ -1,4 +1,4 @@
-# Cyclops 
+# Cyclops 即将发布！！！！
 
 ![avatar](cyclops.ico)**Cyclops 是一款 XSS 检测工具** 
 
