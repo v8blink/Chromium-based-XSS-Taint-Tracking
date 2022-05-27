@@ -2,7 +2,7 @@
 
 Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地址](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases)  
 
-现有仅有 Win 10 版，Linux 和 Mac 版马上更新。   
+现在仅有 Win 10 版，Linux 和 Mac 版马上更新。   
 
 
 # 使用说明
