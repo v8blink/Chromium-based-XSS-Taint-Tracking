@@ -10,7 +10,7 @@ Cyclops 仍处于开发阶段，有问题及时沟通。
 使用 Cyclops 访问目标网站时一定要添加 **--no-sandbox** 参数，发现可疑 XSS 时，会生成 SourceSink.txt文件，[SourceSink格式说明见下文](#sourcesink-文件格式说明)。   
 
 [使用演示视频1](https://www.zhihu.com/zvideo/1505471657166282752) ，[使用演示视频2](https://www.zhihu.com/zvideo/1505847898797969409)      
-**注意** 软件版本更新较快，新功能不一定在视频中体现  
+**注意** 软件版本更新较快，新功能不一定包括在视频中  
 
 # 更新计划    
 按优先级排序：  
