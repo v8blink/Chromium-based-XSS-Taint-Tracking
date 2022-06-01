@@ -1,4 +1,4 @@
-![avatar](cyclops.ico)**Cyclops 是一款 XSS 检测工具**    
+![avatar](cyclops.ico)**Cyclops 是一款具有 XSS 检测功能的浏览器**    
 
 Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地址](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases)  
 
@@ -6,9 +6,49 @@ Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地�
 
 
 # 使用说明
-Cyclops 是一款基于 Chromium 源码实现的 XSS 检测工具。该软件仍处于开发阶段，有问题及时沟通。  
-使用 Cyclops 访问目标网站时一定要添加 **--no-sandbox** 参数，发现可疑 XSS 时，会生成 SourceSink.txt。     
-### 1.SourceSink 文件格式说明  
+Cyclops 仍处于开发阶段，有问题及时沟通。  
+使用 Cyclops 访问目标网站时一定要添加 **--no-sandbox** 参数，发现可疑 XSS 时，会生成 SourceSink.txt文件，[SourceSink格式说明见下文](#sourcesink-文件格式说明)。   
+
+[使用演示视频1](https://www.zhihu.com/zvideo/1505471657166282752) ，[使用演示视频2](https://www.zhihu.com/zvideo/1505847898797969409)      
+**注意** 软件版本更新较快，新功能不一定在视频中体现  
+
+# 更新计划    
+按优先级排序：  
+**0.sink 信息必须要包含 id**  
+借用前面的例子“Sink:HTMLLIElement.className”，在没有 id 时会显示 Element 类型。有 id 时一定会显示 id，我发现此处有 bug，有时 id 不显示，我正在积极完善中，过几天更新。  
+
+**1.更新 source 和 sink**  
+目前已经跟踪的 source 和 sink 如下：
+|source|sink|
+|----|----|
+|document.baseURI|element.innerHTML  
+|document.URL|document.cookie   
+|document.referrer|element.innerText  
+|location.href/a.href|element.className     
+|location.hash|element.href   
+|location.host|element.src  
+|location.hostname|document.write()  
+|location.pathname|document.writeln()  
+|location.search|window.alert()  
+|document.domain|window.setTimeout()  
+|document.cookie|window.setInterval()
+|document.documentURI|window.postMessage
+|element.textContent|document.createElement()
+|document.title|
+|element.classname|
+|element.namespaceURI|
+|element.src|
+
+大家多多提供修改意见，尽早完善 Cyclops，为大家发现更多的 XSS。  
+
+**2.修复 crash 问题**  
+我的测试范围有限，请大家发现 crash 时及时通知我，发 issue 或微信：qq9123013   
+**3.优化 SourceSink.txt 格式**    
+目前这样的 SourceSink.txt 实属无奈，我本想采用 JSON 格式输出，但 Chromium 源码耦合度很高，源码又十分复杂，我的改动稍有差池，crash满天飞。  
+我更想把 SourceSink 结果转发到指定端口，这样更方便自动化。  
+但上述想法我暂时无能为力，我会尽快更新。  
+
+# SourceSink 文件格式说明  
 文件中每行是一条 sink 记录，由逗号分为三部分。第一部分是 sink 信息；第二部分 910226 是测试标记；第三部分是数据来源，其中 每对 [] 是一个单元，单元可以嵌套，从里向外看。举例如下：  
 >[Sink:alert:qerwr , 910226, [ENURI:[Substring:[Location.search]]]]
 
@@ -68,49 +108,12 @@ Sink:HTMLLIElement.className  冒号分隔，数据的终点是某个 Element �
 
 **注意**有描述不详细的地方，请多担待，直接来问我吧。
 
-# 更新计划    
-按优先级排序：  
-**0.sink 信息必须要包含 id**  
-借用前面的例子“Sink:HTMLLIElement.className”，在没有 id 时会显示 Element 类型。有 id 时一定会显示 id，我发现此处有 bug，有时 id 不显示，我正在积极完善中，过几天更新。  
-
-**1.更新 source 和 sink**  
-目前已经跟踪的 source 和 sink 如下：
-|source|sink|
-|----|----|
-|document.baseURI|element.innerHTML  
-|document.URL|document.cookie   
-|document.referrer|element.innerText  
-|location.href/a.href|element.className     
-|location.hash|element.href   
-|location.host|element.src  
-|location.hostname|document.write()  
-|location.pathname|document.writeln()  
-|location.search|window.alert()  
-|document.domain|window.setTimeout()  
-|document.cookie|window.setInterval()
-|document.documentURI|window.postMessage
-|element.textContent|document.createElement()
-|document.title|
-|element.classname|
-|element.namespaceURI|
-|element.src|
-
-大家多多提供修改意见，尽早完善 Cyclops，为大家发现更多的 XSS。  
-
-**2.修复 crash 问题**  
-我的测试范围有限，请大家发现 crash 时及时通知我，发 issue 或微信：qq9123013   
-**3.优化 SourceSink.txt 格式**    
-目前这样的 SourceSink.txt 实属无奈，我本想采用 JSON 格式输出，但 Chromium 源码耦合度很高，源码又十分复杂，我的改动稍有差池，crash满天飞。  
-我更想把 SourceSink 结果转发到指定端口，这样更方便自动化。  
-但上述想法我暂时无能为力，我会尽快更新。  
-
 # 🍺赞赏    
 如果对你有帮助，请打赏豆豆以资鼓励🥂   
-![](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/blob/main/Donate.jpg)       
+ <img src="https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/blob/main/Donate.jpg" width = "300" height = "300" alt="图片名称" align=center />     
+
 
 # 免责声明
 
 如您在使用本工具的过程中存在任何非法行为，您将自行承担所有后果，本工具所有开发者和所有贡献者不承担任何法律及连带责任。
 除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要安装并使用本工具。
-您的使用行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。
-
