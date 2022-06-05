@@ -1,4 +1,5 @@
-![avatar](cyclops.ico)**Cyclops 是一款具有 XSS 检测功能的浏览器**  
+![avatar](cyclops.ico)**Cyclops 是一款具有 XSS 检测功能的浏览器**    
+
 📝[Englist Document](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/blob/main/README-en.md)   
 
 Cyclops 暂时不开源，直接下载构建的二进制文件即可 [下载地址](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases)  
