@@ -6,7 +6,7 @@ Cyclops is open evaluation for Microsoft Windows 10; Versions for Linux and Mac 
 
 # User Manual
 Cyclops is still in development. If any problem occurs, please contact us.  
-When using Cyclops, arg "**--no-sandbox**" is needed. If any suspicious XSS is detected, a log file named "SourceSink.txt" will be generated. The format of SourceSink.txt will be introduced below.  
+When using Cyclops, arg "**--no-sandbox**" is needed. If any suspicious XSS is detected, a log file named "SourceSink.txt" will be generated in running directory (Default:C:\Users\UserName\AppData\Local\Chromium\Application\97.0.4684.0\). The format of SourceSink.txt will be introduced below.  
 
 [DEMO video 1](https://www.zhihu.com/zvideo/1505471657166282752)，[DEMO video 2](https://www.zhihu.com/zvideo/1505847898797969409)          
 **Note** Cyclops updates frequently so newly-developed features may not be included in the videos above.
