@@ -1,4 +1,6 @@
-![avatar](cyclops.ico)**Cyclops is a web browser with XSS detection feature**
+![avatar](cyclops.ico)**Cyclops is a web browser with XSS detection feature**   
+
+📝[中文说明](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/blob/main/README.md)   
 
 The Cyclops's binary code can be directly [downloaded here](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking/releases); It's source code is not provided now.    
 
